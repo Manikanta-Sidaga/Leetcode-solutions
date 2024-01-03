@@ -1,0 +1,28 @@
+//Daily question 01-01-2024
+//455. Assign cookies
+//java code...
+
+class Solution {
+    public int findContentChildren(int[] g, int[] s) {
+        int glen=g.length;
+        int slen=s.length;
+        int count=0;
+        for(int i=0;i<glen;i++){
+            int a=g[i];
+            if(bsearch( s,a )){
+                count++;
+            }
+        }
+        return count;
+    }
+    static boolean bsearch(int []s, int a){
+        Arrays.sort(s);
+        for(int i=0;i<s.length;i++){
+            if(s[i]>=a){
+                s[i]=-1;
+                return true;
+            }
+        }
+        return false;
+    }
+}
